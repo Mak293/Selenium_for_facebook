@@ -2,46 +2,50 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-25T07:54:16 IST" name="Default suite" finished-at="2022-05-25T07:54:28 IST" duration-ms="11538">
+  <suite started-at="2022-05-25T16:57:34 IST" name="Default suite" finished-at="2022-05-25T16:57:51 IST" duration-ms="16285">
     <groups>
     </groups>
-    <test started-at="2022-05-25T07:54:16 IST" name="Default test" finished-at="2022-05-25T07:54:28 IST" duration-ms="11538">
+    <test started-at="2022-05-25T16:57:34 IST" name="Default test" finished-at="2022-05-25T16:57:51 IST" duration-ms="16285">
       <class name="Test_001.Test_1">
-        <test-method is-config="true" signature="setExtent_e()[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:16 IST" name="setExtent_e" finished-at="2022-05-25T07:54:16 IST" duration-ms="257" status="PASS">
+        <test-method is-config="true" signature="readProperties()[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:34 IST" name="readProperties" finished-at="2022-05-25T16:57:34 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readProperties -->
+        <test-method is-config="true" signature="setExtent_e()[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:34 IST" name="setExtent_e" finished-at="2022-05-25T16:57:35 IST" duration-ms="257" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExtent_e -->
-        <test-method signature="login()[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:16 IST" name="login" finished-at="2022-05-25T07:54:17 IST" duration-ms="236" status="PASS">
+        <test-method signature="login()[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:35 IST" name="login" finished-at="2022-05-25T16:57:40 IST" duration-ms="5517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method is-config="true" signature="getResult_e(org.testng.ITestResult)[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:17 IST" name="getResult_e" finished-at="2022-05-25T07:54:23 IST" duration-ms="6175" status="PASS">
+        <test-method is-config="true" signature="getResult_e(org.testng.ITestResult)[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:40 IST" name="getResult_e" finished-at="2022-05-25T16:57:40 IST" duration-ms="304" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=login status=SUCCESS method=Test_1.login()[pri:0, instance:Test_001.Test_1@37191ef0] output={null}]]]>
+                <![CDATA[[TestResult name=login status=SUCCESS method=Test_1.login()[pri:0, instance:Test_001.Test_1@62ce72ff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult_e -->
-        <test-method signature="post_status()[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:23 IST" name="post_status" finished-at="2022-05-25T07:54:27 IST" duration-ms="3927" status="PASS">
+        <test-method signature="post_status()[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:40 IST" name="post_status" finished-at="2022-05-25T16:57:47 IST" duration-ms="6649" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- post_status -->
-        <test-method is-config="true" signature="getResult_e(org.testng.ITestResult)[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:27 IST" name="getResult_e" finished-at="2022-05-25T07:54:27 IST" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="getResult_e(org.testng.ITestResult)[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:47 IST" name="getResult_e" finished-at="2022-05-25T16:57:47 IST" duration-ms="168" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=post_status status=SUCCESS method=Test_1.post_status()[pri:0, instance:Test_001.Test_1@37191ef0] output={null}]]]>
+                <![CDATA[[TestResult name=post_status status=SUCCESS method=Test_1.post_status()[pri:0, instance:Test_001.Test_1@62ce72ff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult_e -->
-        <test-method is-config="true" signature="endReport_e()[pri:0, instance:Test_001.Test_1@37191ef0]" started-at="2022-05-25T07:54:27 IST" name="endReport_e" finished-at="2022-05-25T07:54:28 IST" duration-ms="565" status="PASS">
+        <test-method is-config="true" signature="endReport_e()[pri:0, instance:Test_001.Test_1@62ce72ff]" started-at="2022-05-25T16:57:47 IST" name="endReport_e" finished-at="2022-05-25T16:57:51 IST" duration-ms="3306" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport_e -->

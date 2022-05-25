@@ -1,11 +1,16 @@
 package Test_001;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -16,17 +21,19 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import Drivers.Driver_d;
 import Extent_report.Extent_report_er;
-import Locators.Locate_l;
+import Login_page.Login_fun;
+import Login_page.Profile_fun;
 
 public class Test_1 {								
 
 	public ChromeDriver driver;
 	Driver_d obj=new Driver_d();
-	Locate_l adr=new Locate_l();
 	Extent_report_er rep=new Extent_report_er();
+	Login_fun lo=new Login_fun();
+	Profile_fun pro=new Profile_fun();
+	Properties prop;
 	
-	public String username="chauhanmohit293@gmail.com";
-	public String password="123456@m";
+	String expt_titl="(20+) Facebook";
 	
 	public Test_1()
 	{
@@ -38,14 +45,12 @@ public class Test_1 {
 	public void login()
 	{
 		rep.logger=rep.report.startTest("Login");
-		WebElement user=driver.findElement(adr.user_a);
-		user.sendKeys(username);
-		WebElement pass=driver.findElement(adr.pass_a);
-		pass.sendKeys(password);
-		driver.findElement(adr.login_botton_a).click();
+		driver.get(prop.getProperty("url"));
+		lo.login(driver,prop.getProperty("username"),prop.getProperty("password"));
+		String urll=driver.getCurrentUrl();
+		Assert.assertEquals(urll, prop.getProperty("url"));
 		
 		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
-		
 		rep.logger.log(LogStatus.INFO, "Check the Login page"); 
 	}
 	
@@ -53,16 +58,26 @@ public class Test_1 {
 	public void post_status() throws InterruptedException
 	{
 		rep.logger=rep.report.startTest("Post Status");
-		driver.findElement(adr.status_a).click();
-		Thread.sleep(3000);
-		WebElement Textarea = driver.findElement(adr.text_area_a);
-		Textarea.click();
-		Textarea.sendKeys("Hello World");
-		WebElement PostBtn = driver.findElement(adr.post_bn_a);
-		PostBtn.click();
-		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
+		pro.profile(driver);
+		String user=driver.getTitle();
 		
+		Assert.assertEquals(user, expt_titl);
+		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
 		rep.logger.log(LogStatus.INFO, "Check for Status update"); 
+	}
+	
+	@BeforeClass
+	public void readProperties() throws FileNotFoundException
+	{
+		prop=new Properties();
+		try {
+				InputStream input=new FileInputStream("C:\\Users\\GL63\\git\\Selenium_for_facebook\\Facebook_automation\\src\\main\\java\\config\\config.properties");
+				prop.load(input);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@BeforeClass
@@ -71,9 +86,11 @@ public class Test_1 {
 		rep.setExtent();
 	}
 	@AfterClass
-	public void endReport_e()
+	public void endReport_e() throws InterruptedException
 	{
 		rep.endReport();
+		Thread.sleep(3000);
+		//driver.quit();
 	}
 	
 	@AfterMethod

@@ -14,6 +14,5 @@ public static ChromeDriver driver;
 	{
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.get("https://www.facebook.com/login/");
 	}
 }

@@ -9,6 +9,7 @@
           <include name="setExtent_e"/>
           <include name="getResult_e"/>
           <include name="endReport_e"/>
+          <include name="readProperties"/>
         </methods>
       </class> <!-- Test_001.Test_1 -->
     </classes>
