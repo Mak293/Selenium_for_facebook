@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -34,6 +31,7 @@ public class Test_1 {
 	Properties prop;
 	
 	String expt_titl="(20+) Facebook";
+	String addre="https://www.facebook.com/";
 	
 	public Test_1()
 	{
@@ -42,13 +40,14 @@ public class Test_1 {
 	}
 	
 	@Test
-	public void login()
+	public void login() throws InterruptedException
 	{
 		rep.logger=rep.report.startTest("Login");
 		driver.get(prop.getProperty("url"));
 		lo.login(driver,prop.getProperty("username"),prop.getProperty("password"));
+		Thread.sleep(3000);
 		String urll=driver.getCurrentUrl();
-		Assert.assertEquals(urll, prop.getProperty("url"));
+		Assert.assertEquals(urll, addre);
 		
 		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
 		rep.logger.log(LogStatus.INFO, "Check the Login page"); 
@@ -71,7 +70,7 @@ public class Test_1 {
 	{
 		prop=new Properties();
 		try {
-				InputStream input=new FileInputStream("C:\\Users\\GL63\\git\\Selenium_for_facebook\\Facebook_automation\\src\\main\\java\\config\\config.properties");
+				InputStream input=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/config/config.properties");
 				prop.load(input);
 		}
 		catch(Exception e)
@@ -90,7 +89,7 @@ public class Test_1 {
 	{
 		rep.endReport();
 		Thread.sleep(3000);
-		//driver.quit();
+		driver.quit();
 	}
 	
 	@AfterMethod

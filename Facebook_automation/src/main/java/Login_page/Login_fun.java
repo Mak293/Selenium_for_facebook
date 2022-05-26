@@ -4,10 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.relevantcodes.extentreports.LogStatus;
-
 import Drivers.Driver_d;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Login_fun {
 	

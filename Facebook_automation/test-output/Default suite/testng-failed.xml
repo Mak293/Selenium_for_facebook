@@ -6,6 +6,7 @@
       <class name="Test_001.Test_1">
         <methods>
           <include name="post_status"/>
+          <include name="login"/>
           <include name="setExtent_e"/>
           <include name="getResult_e"/>
           <include name="endReport_e"/>
