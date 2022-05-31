@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
+import Constants.Constants_c;
 import Drivers.Driver_d;
 import Extent_report.Extent_report_er;
 import Login_page.Login_fun;
@@ -28,10 +29,9 @@ public class Test_1 {
 	Extent_report_er rep=new Extent_report_er();
 	Login_fun lo=new Login_fun();
 	Profile_fun pro=new Profile_fun();
+	Constants_c cnst=new Constants_c();
 	Properties prop;
 	
-	String expt_titl="(20+) Facebook";
-	String addre="https://www.facebook.com/";
 	
 	public Test_1()
 	{
@@ -45,9 +45,9 @@ public class Test_1 {
 		rep.logger=rep.report.startTest("Login");
 		driver.get(prop.getProperty("url"));
 		lo.login(driver,prop.getProperty("username"),prop.getProperty("password"));
-		Thread.sleep(3000);
+		Thread.sleep(1500);
 		String urll=driver.getCurrentUrl();
-		Assert.assertEquals(urll, addre);
+		Assert.assertEquals(urll, cnst.addre);
 		
 		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
 		rep.logger.log(LogStatus.INFO, "Check the Login page"); 
@@ -60,7 +60,7 @@ public class Test_1 {
 		pro.profile(driver);
 		String user=driver.getTitle();
 		
-		Assert.assertEquals(user, expt_titl);
+		Assert.assertEquals(user, cnst.expt_titl);
 		rep.logger.log(LogStatus.PASS, "Test CAse Passed");
 		rep.logger.log(LogStatus.INFO, "Check for Status update"); 
 	}
